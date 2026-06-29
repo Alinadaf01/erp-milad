@@ -1,0 +1,1 @@
+ALTER TABLE public.representatives ADD COLUMN IF NOT EXISTS allowed_users uuid[] DEFAULT NULL;

@@ -1,0 +1,2 @@
+ALTER TABLE public.raw_materials ADD COLUMN IF NOT EXISTS bom_type text NOT NULL DEFAULT 'scaled';
+ALTER TABLE public.raw_materials ADD CONSTRAINT raw_materials_bom_type_check CHECK (bom_type IN ('scaled','fixed_per_size'));
