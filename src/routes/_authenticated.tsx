@@ -16,7 +16,11 @@ export const Route = createFileRoute("/_authenticated")({
 function AuthedLayout() {
   const [ready, setReady] = useState(false);
   useEffect(() => { setReady(true); }, []);
-  if (!ready) return null;
+  if (!ready) return (
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+    </div>
+  );
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-background">
